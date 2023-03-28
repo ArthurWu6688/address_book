@@ -51,7 +51,7 @@ void CheckCapacity(AddressBook* address_book){
     //存储满就要扩容
     if(address_book->size==address_book->capacity){
         //如果容量在1024以内则翻倍增长，在1024以上则线性增长
-        int capacity=address_book->capacity>=1024?address_book->capacity+1024:address_book->capacity*2;
+        int capacity=address_book->capacity>=1024?address_book->capacity+1024*sizeof (Contact):address_book->capacity*sizeof(Contact)*2;
         //因为扩容有可能会失败，失败会返回NULL
         Contact* contact=(Contact*)realloc(address_book->contact,capacity);
         assert(contact!=NULL);//等于NULL就表示扩容失败了，失败了就退出
