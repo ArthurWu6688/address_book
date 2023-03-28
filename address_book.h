@@ -37,5 +37,6 @@ void Update(AddressBook* address_book);
 void Clear(AddressBook* address_book);
 void Sort(AddressBook* address_book);
 void CheckCapacity(AddressBook* address_book);
+void Destory(AddressBook* address_book);
 
 #endif //ADDRESS_BOOK_ADDRESS_BOOK_H

@@ -328,6 +328,7 @@ void Choice(AddressBook* address_book){
         switch (choice) {
             case EXIT:
                 printf("感谢使用通讯录！再见！\n");
+                Destory(address_book);
                 system("pause");
                 exit(0);//退出程序运行，参数0跟return 0是一个意思
             case INSERT:
@@ -357,4 +358,10 @@ void Choice(AddressBook* address_book){
                 break;
         }
     }
+}
+
+void Destory(AddressBook* address_book){
+    free(address_book->contact);
+    address_book->size=0;
+    address_book->contact=NULL;
 }
